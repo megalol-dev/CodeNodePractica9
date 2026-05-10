@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - WoW Auth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<body class="fondo-auth">
+
+    <header>
+        <h1>WOW</h1>
+    </header>
+
+    <nav>
+        <a href="/register">Ir a registro</a>
+        <a href="/">Volver al inicio</a>
+    </nav>
+
+    <main>
+        <section class="card form-card">
+
+            <h2>Iniciar sesión</h2>
+
+            {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="/login" method="POST" autocomplete="off">
+
+                <label>Email:</label>
+                <input type="email" name="email" id="email" placeholder="Introduce tu email" autocomplete="new-email"
+                    required>
+                <small class="help">Introduce un email válido.</small>
+                <p id="emailError"></p>
+
+                <label>Contraseña:</label>
+                <input type="password" name="password" id="password" placeholder="Introduce tu contraseña"
+                    autocomplete="new-password" required>
+                <small class="help">La contraseña debe tener mínimo 6 caracteres.</small>
+                <p id="passwordError"></p>
+
+                <input type="submit" value="Entrar" class="btn btn-green">
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Reino de Azeroth · Soporte: soporte@wowauth.fake · 2026</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/validaciones.js') }}"></script>
+
+</body>
+
+</html>

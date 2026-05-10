@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - WoW Auth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<body class="fondo-auth">
+
+    <header>
+        <h1>WOW</h1>
+    </header>
+
+    <nav>
+        <a href="/login">Ir al login</a>
+        <a href="/">Volver al inicio</a>
+    </nav>
+
+    <main>
+        <section class="card form-card">
+
+            <h2>Crear cuenta</h2>
+
+            <form id="registerForm" action="/register" method="POST" autocomplete="off">
+
+                <label>Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre" autocomplete="new-name"
+                    required>
+                <small class="help">Mínimo 3 caracteres. Solo letras y números.</small>
+                <p id="nombreError"></p>
+
+                <label>Email:</label>
+                <input type="email" name="email" id="email" placeholder="ejemplo@gmail.com" autocomplete="new-email"
+                    required>
+                <small class="help">Debe ser un correo válido.</small>
+                <p id="emailError"></p>
+
+                <label>Contraseña:</label>
+                <input type="password" name="password" id="password" placeholder="Crea una contraseña"
+                    autocomplete="new-password" required>
+                <small class="help">Mínimo 6 caracteres. Solo letras y números.</small>
+                <p id="passwordError"></p>
+
+                <label>Confirmar contraseña:</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Repite la contraseña"
+                    autocomplete="new-password" required>
+                <small class="help">Debe coincidir con la contraseña anterior.</small>
+                <p id="confirmPasswordError"></p>
+
+                <input type="submit" value="Registrarse" class="btn btn-green">
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Reino de Azeroth · Soporte: soporte@wowauth.fake · 2026</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/validaciones.js') }}"></script>
+
+</body>
+
+</html>
