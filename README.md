@@ -273,7 +273,7 @@ http://127.0.0.1:5000
 Proyecto realizado por:
 
 ```txt
-MegaLol / CodeNode
+José Luis Escudero Polo
 ```
 
 Como práctica de Flask + Frontend UI inspirado en videojuegos.
